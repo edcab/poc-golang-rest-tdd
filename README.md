@@ -13,9 +13,9 @@ Implementamos en la carpeta ingrastructure:
 - transport.go
 
 En los modulos
-`handler.go` vamos a implementar nuestro `router con Mux` de esta forma crearemos los metodos `HTTP` con sus respectivas URL
-`transport.go` declaramos nuestros `handling methods` que recibiran nuestro request y enviara las respuestas.
-`endpoint.go` aca implementaremos la logica que se ejecutara una pase por  `func` decode nusetra petición.  
+- `handler.go` vamos a implementar nuestro `router con Mux` de esta forma crearemos los metodos `HTTP` con sus respectivas URL
+- `transport.go` declaramos nuestros `handling methods` que recibiran nuestro request y enviara las respuestas.
+- `endpoint.go` aca implementaremos la logica que se ejecutara una pase por  `func` decode nusetra petición.  
 
 
 ##Request example
