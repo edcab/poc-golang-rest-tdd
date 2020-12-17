@@ -7,19 +7,20 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
-	"poc-golang-rest-tdd/infrastructure/handler"
+	"poc-golang-rest-tdd/infrastructure/http/rest/add/handler"
 	"syscall"
 )
 
-type API interface{
+type API interface {
 	Start()
 }
 
 type REST struct {
-
+	API
 }
 
-func (r *REST) Start() {
+func (r *REST) Start() {}
+func Start(interface{}) {
 
 	newHandler := handler.NewHandler()
 	var (

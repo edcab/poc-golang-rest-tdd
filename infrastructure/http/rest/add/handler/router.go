@@ -5,19 +5,17 @@ import (
 	kithttp "github.com/go-kit/kit/transport/http"
 	"github.com/gorilla/mux"
 	"net/http"
-	"poc-golang-rest-tdd/infrastructure/http/rest/add"
 )
 
 const (
-	URLAdd   = "/v1"
+	URLAdd = "/v1"
 )
 
-type Handler interface{
+type Router interface {
 	CreateHandlder()
 }
 
 type httpHandler struct {
-
 }
 
 func NewHandler() *httpHandler {
@@ -30,7 +28,7 @@ type endpoints struct {
 
 func makeServerEndpoints() endpoints {
 	return endpoints{
-		Add:           add.MakeAddEndpoint,
+		Add: MakeAddEndpoint,
 	}
 }
 
@@ -41,8 +39,8 @@ func (http httpHandler) CreateHandler() http.Handler {
 
 	r.Methods("POST").Path(URLAdd).Handler(kithttp.NewServer(
 		e.Add(),
-		add.DecodeRequest,
-		add.EncodeResponse,
+		DecodeRequest,
+		EncodeResponse,
 	))
 
 	return r
