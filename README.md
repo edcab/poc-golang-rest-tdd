@@ -7,7 +7,7 @@ Nuestro proyecto
 
 Para trabajar con Gokit
 
-Implementamos en la carpeta ingrastructure: 
+Implementamos en la carpeta infrastructure: 
 - handler.go
 - enpoint.go
 - transport.go

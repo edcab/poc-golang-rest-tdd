@@ -1,4 +1,4 @@
-package add
+package handler
 
 import (
 	"context"
@@ -7,7 +7,6 @@ import (
 	"net/http"
 	"poc-golang-rest-tdd/infrastructure/http/rest/add/model"
 )
-
 
 func MakeAddEndpoint() endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (interface{}, error) {
@@ -18,9 +17,11 @@ func MakeAddEndpoint() endpoint.Endpoint {
 		if err != nil {
 			return nil, err
 		}
-		return model.Response{Sum: "2"}, nil
+
+		sum := body.CoordinateX + body.CoordinateY
+
+		response := model.Response{Sum: sum}
+
+		return response, nil
 	}
 }
-
-
-//mockgen -destination=mocks/mock_doer.go -package=mocks github.com/sgreben/testing-with-gomock/doer Doer

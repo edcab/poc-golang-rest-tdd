@@ -1,6 +1,6 @@
 package model
 
-type Request struct{
-	coordinateX string `json:"coordinate_x"`
-	coordinateY string `json:"coordinate_y"`
+type Request struct {
+	CoordinateX int64 `json:"coordinate_x"`
+	CoordinateY int64 `json:"coordinate_y"`
 }
